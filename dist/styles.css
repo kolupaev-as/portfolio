@@ -198,6 +198,7 @@ a {
   font-weight: 500;
   line-height: 58px;
   letter-spacing: -0.02em;
+  text-wrap: pretty;
 }
 
 .case-heading p {
@@ -205,6 +206,7 @@ a {
   font-size: clamp(16px, 1.07vw, 20px);
   font-weight: 300;
   line-height: 28px;
+  text-wrap: pretty;
 }
 
 .case-meta {

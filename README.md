@@ -16,6 +16,7 @@ python3 -m http.server 8000 --directory dist
 
 - `dist/index.html` — содержание страницы;
 - `dist/styles.css` — все стили;
+- `dist/typography.js` — автоматический перенос коротких предлогов и союзов;
 - `dist/assets` — изображения, используемые на сайте;
 - `source-assets` — исходные изображения из задания.
 
