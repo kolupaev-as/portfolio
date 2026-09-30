@@ -1,0 +1,98 @@
+.case-page-shell {
+  align-items: stretch;
+}
+
+.case-page-shell .sidebar {
+  padding-block: 64px;
+}
+
+.case-column {
+  min-width: 0;
+  height: 100vh;
+  height: 100dvh;
+  flex: 1 1 auto;
+  padding-block: 48px;
+  overflow: hidden;
+}
+
+.case-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+
+.case-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.case-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: var(--page);
+}
+
+.case-toolbar-button {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  flex: 0 0 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.case-toolbar-button svg {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.case-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 24px 16px 0;
+}
+
+.case-detail-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-detail-image:first-child {
+  border-radius: 48px 48px 0 0;
+}
+
+.case-detail-image:last-child {
+  border-radius: 0 0 48px 48px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .case-toolbar-button:hover {
+    color: var(--social-hover);
+  }
+}
+
+.case-toolbar-button:focus-visible,
+.case-card:focus-visible,
+.menu-item:focus-visible,
+.social-icon:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 4px;
+}
