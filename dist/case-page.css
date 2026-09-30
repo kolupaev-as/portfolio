@@ -11,7 +11,7 @@
   height: 100vh;
   height: 100dvh;
   flex: 1 1 auto;
-  padding-block: 48px;
+  padding-top: 48px;
   overflow: hidden;
 }
 
