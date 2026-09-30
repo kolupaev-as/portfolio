@@ -26,6 +26,8 @@ python3 -m http.server 8000 --directory dist
 
 Workflow `.github/workflows/deploy-beget.yml` автоматически загружает содержимое `dist` на Beget после каждого изменения этой папки в ветке `main`.
 
+До завершения настройки FTP автоматический запуск безопасно отключён. Для включения публикации нужно создать переменную репозитория `BEGET_DEPLOY_ENABLED` со значением `true`.
+
 Для публикации нужен отдельный FTP-аккаунт Beget, ограниченный корневой директорией сайта. В GitHub Environment `production` должны быть настроены секреты:
 
 - `BEGET_FTP_SERVER` — имя FTP-сервера из панели Beget;

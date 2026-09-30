@@ -17,6 +17,7 @@ permissions:
 
 jobs:
   deploy:
+    if: vars.BEGET_DEPLOY_ENABLED == 'true'
     name: Upload site
     runs-on: ubuntu-latest
     environment: production

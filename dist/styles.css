@@ -2,21 +2,23 @@
   color-scheme: dark;
   --page: #0b0b0b;
   --card: #0f0f0f;
+  --hover-surface: #121212;
   --text: #eeeeee;
   --muted: #7b7b7b;
+  --social-hover: #838383;
 
   /* Hero-1280 */
   --page-padding: 48px;
   --layout-gap: 64px;
-  --sidebar-width: 356px;
+  --sidebar-width: 347px;
   --profile-title-size: 24px;
-  --profile-title-line: 29px;
+  --profile-title-line: 34px;
   --profile-role-size: 20px;
   --profile-role-line: 28px;
-  --menu-height: 74px;
+  --menu-height: 72px;
   --card-height: 445px;
   --card-content-gap: 32px;
-  --cover-width: 326px;
+  --cover-width: 331px;
   --case-title-size: 24px;
   --case-title-line: 29px;
   --case-body-size: 14px;
@@ -89,9 +91,9 @@ a {
 }
 
 .profile-photo {
-  width: 122px;
-  height: 122px;
-  flex: 0 0 122px;
+  width: 104px;
+  height: 104px;
+  flex: 0 0 104px;
   border-radius: 24px;
   object-fit: cover;
 }
@@ -113,7 +115,7 @@ a {
 
 .profile-copy h1 {
   font-size: var(--profile-title-size);
-  font-weight: 700;
+  font-weight: 500;
   line-height: var(--profile-title-line);
   white-space: nowrap;
 }
@@ -270,12 +272,40 @@ a {
   line-height: var(--meta-line);
 }
 
-.case-cover {
+.case-media {
   width: var(--cover-width);
   height: 100%;
   flex: 0 0 var(--cover-width);
   border-radius: 36px;
+  overflow: hidden;
+}
+
+.case-cover {
+  width: 100%;
+  height: 100%;
+  display: block;
   object-fit: cover;
+  transform: scale(1);
+  transition: transform 300ms ease-out;
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .menu-item:not(.menu-item-active):hover {
+    background: var(--hover-surface);
+  }
+
+  .social-icon:hover {
+    color: var(--social-hover);
+  }
+
+  .case-card:hover {
+    background: var(--hover-surface);
+  }
+
+  .case-card:hover .case-cover {
+    transform: scale(1.082);
+  }
 }
 
 .wide-only {
@@ -291,7 +321,7 @@ a {
 /* Плавный переход от Hero-1280 к Hero-1440. */
 @media (min-width: 1281px) and (max-width: 1440px) {
   :root {
-    --cover-width: clamp(326px, calc(50vw - 314px), 406px);
+    --cover-width: clamp(331px, calc(50vw - 309px), 411px);
     --case-title-size: clamp(24px, calc(5vw - 40px), 32px);
     --case-title-line: clamp(29px, calc(6.25vw - 51px), 39px);
     --case-body-size: clamp(14px, calc(1.25vw - 2px), 16px);
@@ -305,16 +335,9 @@ a {
 /* Плавный переход от Hero-1440 к Hero-1920. */
 @media (min-width: 1441px) {
   :root {
-    --sidebar-width: clamp(356px, calc(15.625vw + 131px), 431px);
-    --layout-gap: clamp(64px, calc(3.75vw + 10px), 82px);
-    --profile-title-size: clamp(24px, 1.666667vw, 32px);
-    --profile-title-line: clamp(29px, calc(3.333333vw - 19px), 45px);
-    --profile-role-size: clamp(20px, calc(0.833333vw + 8px), 24px);
-    --profile-role-line: clamp(28px, calc(1.25vw + 10px), 34px);
-    --menu-height: clamp(74px, calc(3.333333vw + 26px), 90px);
     --card-height: clamp(445px, calc(42.083333vw - 161px), 647px);
     --card-content-gap: clamp(32px, calc(6.666667vw - 64px), 64px);
-    --cover-width: clamp(406px, calc(42.5vw - 206px), 610px);
+    --cover-width: clamp(411px, calc(41.458333vw - 186px), 610px);
     --case-title-size: clamp(32px, calc(3.333333vw - 16px), 48px);
     --case-title-line: clamp(39px, calc(3.958333vw - 18px), 58px);
     --case-body-size: clamp(16px, calc(0.833333vw + 4px), 20px);
@@ -340,5 +363,6 @@ a {
   *::before,
   *::after {
     scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
