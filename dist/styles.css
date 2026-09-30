@@ -283,7 +283,7 @@ a {
 }
 
 @media (max-width: 1280px) {
-  .case-card:first-child .case-heading {
+  .case-heading {
     gap: 16px;
   }
 }
