@@ -1,0 +1,47 @@
+name: Deploy to Beget
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "dist/**"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-beget-production
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Upload site
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Install FTP client
+        run: sudo apt-get update && sudo apt-get install --yes lftp
+
+      - name: Upload dist to Beget
+        env:
+          BEGET_FTP_SERVER: ${{ secrets.BEGET_FTP_SERVER }}
+          BEGET_FTP_USERNAME: ${{ secrets.BEGET_FTP_USERNAME }}
+          BEGET_FTP_PASSWORD: ${{ secrets.BEGET_FTP_PASSWORD }}
+        run: |
+          test -n "$BEGET_FTP_SERVER"
+          test -n "$BEGET_FTP_USERNAME"
+          test -n "$BEGET_FTP_PASSWORD"
+
+          lftp -u "$BEGET_FTP_USERNAME","$BEGET_FTP_PASSWORD" "$BEGET_FTP_SERVER" <<'LFTP_COMMANDS'
+          set ftp:ssl-force true
+          set ftp:ssl-protect-data true
+          set ssl:verify-certificate true
+          mirror --reverse --delete --verbose --parallel=2 dist/ ./
+          bye
+          LFTP_COMMANDS
