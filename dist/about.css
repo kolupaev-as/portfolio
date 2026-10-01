@@ -1,18 +1,23 @@
 :root {
   --about-gap: 24px;
   --about-photo-width: 296px;
+  --about-photo-height: 560px;
+  --about-photo-radius: 28px;
   --about-radius: 32px;
-  --about-padding: 24px;
-  --about-min-height: 560px;
+  --about-main-padding: 16px;
+  --about-min-height: 604px;
+  --about-info-gap: 24px;
   --about-title-size: 32px;
   --about-title-line: 39px;
   --about-text-size: 14px;
   --about-text-line: 20px;
   --about-label-width: 100px;
+  --about-column-gap: 16px;
   --about-row-gap: 16px;
   --about-button-height: 56px;
   --skill-size: 12px;
   --skill-line: 17px;
+  --skill-padding-inline: 10px;
 }
 
 .about-page-shell {
@@ -24,7 +29,7 @@
   height: 100vh;
   height: 100dvh;
   flex: 1 1 auto;
-  padding-block: 64px;
+  padding-block: var(--page-padding);
   overflow-y: auto;
   overscroll-behavior-y: contain;
   scrollbar-width: none;
@@ -35,33 +40,43 @@
   height: 0;
 }
 
-.about-layout {
+.about-body {
   width: 100%;
   min-height: var(--about-min-height);
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: var(--about-gap);
+  padding: 16px;
+  border-radius: var(--about-radius);
+  overflow: hidden;
+  background: #0f0f0f;
 }
 
-.about-card {
+.about-main {
   min-width: 0;
-  min-height: var(--about-min-height);
+  align-self: stretch;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  padding: var(--about-padding);
-  border-radius: var(--about-radius);
-  background: var(--card);
+  gap: 48px;
+  padding: var(--about-main-padding);
 }
 
-.about-card h2,
+.about-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--about-info-gap);
+}
+
+.about-info h2,
 .about-details,
 .about-details dt,
 .about-details dd {
   margin: 0;
 }
 
-.about-card h2 {
+.about-info h2 {
   font-size: var(--about-title-size);
   font-weight: 500;
   line-height: var(--about-title-line);
@@ -71,14 +86,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--about-row-gap);
-  padding-top: 24px;
 }
 
 .about-row {
   width: 100%;
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: var(--about-column-gap);
   font-size: var(--about-text-size);
   font-weight: 300;
   line-height: var(--about-text-line);
@@ -107,9 +121,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 10px;
+  padding: 4px var(--skill-padding-inline);
   border-radius: 64px;
-  background: var(--hover-surface);
+  background: #161616;
   font-size: var(--skill-size);
   line-height: var(--skill-line);
   white-space: nowrap;
@@ -130,9 +144,9 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-top: auto;
+  margin: 0;
   padding: 0 20px;
-  border: 1px solid var(--muted);
+  border: 1px solid var(--text);
   border-radius: 16px;
   background: transparent;
   color: var(--text);
@@ -153,9 +167,9 @@
 
 .about-photo-frame {
   width: var(--about-photo-width);
-  min-height: var(--about-min-height);
+  height: var(--about-photo-height);
   flex: 0 0 var(--about-photo-width);
-  border-radius: var(--about-radius);
+  border-radius: var(--about-photo-radius);
   overflow: hidden;
 }
 
@@ -184,36 +198,44 @@
   :root {
     --about-gap: clamp(24px, calc(5vw - 40px), 32px);
     --about-photo-width: clamp(296px, calc(35vw - 152px), 352px);
+    --about-photo-height: clamp(560px, calc(17.5vw + 336px), 588px);
+    --about-photo-radius: clamp(28px, calc(2.5vw - 4px), 32px);
     --about-radius: clamp(32px, calc(10vw - 96px), 48px);
-    --about-padding: clamp(24px, calc(5vw - 40px), 32px);
-    --about-min-height: clamp(560px, calc(17.5vw + 336px), 588px);
+    --about-main-padding: clamp(16px, calc(2.5vw - 16px), 20px);
+    --about-min-height: clamp(604px, calc(17.5vw + 380px), 632px);
+    --about-info-gap: clamp(24px, calc(2.5vw - 8px), 28px);
     --about-title-size: clamp(32px, calc(2.5vw), 36px);
     --about-title-line: clamp(39px, calc(3.125vw - 1px), 44px);
     --about-text-size: clamp(14px, calc(1.25vw - 2px), 16px);
     --about-text-line: clamp(20px, calc(1.875vw - 4px), 23px);
     --about-label-width: clamp(100px, calc(25vw - 220px), 140px);
-    --about-button-height: clamp(56px, calc(5vw - 8px), 64px);
+    --about-column-gap: clamp(16px, calc(2.5vw - 16px), 20px);
     --skill-size: clamp(12px, calc(1.25vw - 4px), 14px);
     --skill-line: clamp(17px, calc(1.875vw - 7px), 20px);
+    --skill-padding-inline: clamp(10px, calc(1.25vw - 6px), 12px);
   }
 }
 
 @media (min-width: 1441px) {
   :root {
     --about-gap: clamp(32px, calc(6.666667vw - 64px), 64px);
-    --about-photo-width: clamp(352px, calc(33.333333vw - 128px), 512px);
+    --about-photo-width: clamp(352px, calc(32.708333vw - 119px), 509px);
+    --about-photo-height: clamp(588px, calc(17.083333vw + 342px), 670px);
+    --about-photo-radius: clamp(32px, calc(0.833333vw + 20px), 36px);
     --about-radius: 48px;
-    --about-padding: clamp(32px, calc(1.666667vw + 8px), 40px);
-    --about-min-height: clamp(588px, calc(17.5vw + 336px), 672px);
+    --about-main-padding: clamp(20px, calc(0.833333vw + 8px), 24px);
+    --about-min-height: clamp(632px, calc(17.083333vw + 386px), 714px);
+    --about-info-gap: clamp(28px, calc(0.833333vw + 16px), 32px);
     --about-title-size: clamp(36px, 2.5vw, 48px);
     --about-title-line: clamp(44px, calc(2.916667vw + 2px), 58px);
     --about-text-size: clamp(16px, calc(0.833333vw + 4px), 20px);
     --about-text-line: clamp(23px, calc(1.041667vw + 8px), 28px);
     --about-label-width: clamp(140px, calc(4.166667vw + 80px), 160px);
+    --about-column-gap: clamp(20px, calc(0.833333vw + 8px), 24px);
     --about-row-gap: clamp(16px, calc(1.666667vw - 8px), 24px);
-    --about-button-height: 64px;
     --skill-size: clamp(14px, calc(0.416667vw + 8px), 16px);
     --skill-line: clamp(20px, calc(0.625vw + 11px), 23px);
+    --skill-padding-inline: 12px;
   }
 }
 
