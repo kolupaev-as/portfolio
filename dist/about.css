@@ -1,7 +1,6 @@
 :root {
   --about-gap: 24px;
   --about-photo-width: 296px;
-  --about-photo-height: 560px;
   --about-photo-radius: 28px;
   --about-radius: 32px;
   --about-main-padding: 16px;
@@ -167,7 +166,7 @@
 
 .about-photo-frame {
   width: var(--about-photo-width);
-  height: var(--about-photo-height);
+  align-self: stretch;
   flex: 0 0 var(--about-photo-width);
   border-radius: var(--about-photo-radius);
   overflow: hidden;
@@ -198,7 +197,6 @@
   :root {
     --about-gap: clamp(24px, calc(5vw - 40px), 32px);
     --about-photo-width: clamp(296px, calc(35vw - 152px), 352px);
-    --about-photo-height: clamp(560px, calc(17.5vw + 336px), 588px);
     --about-photo-radius: clamp(28px, calc(2.5vw - 4px), 32px);
     --about-radius: clamp(32px, calc(10vw - 96px), 48px);
     --about-main-padding: clamp(16px, calc(2.5vw - 16px), 20px);
@@ -220,7 +218,6 @@
   :root {
     --about-gap: clamp(32px, calc(6.666667vw - 64px), 64px);
     --about-photo-width: clamp(352px, calc(32.708333vw - 119px), 509px);
-    --about-photo-height: clamp(588px, calc(17.083333vw + 342px), 670px);
     --about-photo-radius: clamp(32px, calc(0.833333vw + 20px), 36px);
     --about-radius: 48px;
     --about-main-padding: clamp(20px, calc(0.833333vw + 8px), 24px);
