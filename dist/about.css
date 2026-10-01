@@ -165,8 +165,7 @@
 
 .about-photo-frame {
   width: var(--cover-width);
-  height: 413px;
-  align-self: flex-start;
+  align-self: stretch;
   flex: 0 0 var(--cover-width);
   border-radius: var(--about-photo-radius);
   overflow: hidden;
@@ -231,11 +230,6 @@
     --skill-size: clamp(14px, calc(0.416667vw + 8px), 16px);
     --skill-line: clamp(20px, calc(0.625vw + 11px), 23px);
     --skill-padding-inline: 12px;
-  }
-
-  .about-photo-frame {
-    height: auto;
-    align-self: stretch;
   }
 }
 
