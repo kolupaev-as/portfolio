@@ -1,0 +1,224 @@
+:root {
+  --about-gap: 24px;
+  --about-photo-width: 296px;
+  --about-radius: 32px;
+  --about-padding: 24px;
+  --about-min-height: 560px;
+  --about-title-size: 32px;
+  --about-title-line: 39px;
+  --about-text-size: 14px;
+  --about-text-line: 20px;
+  --about-label-width: 100px;
+  --about-row-gap: 16px;
+  --about-button-height: 56px;
+  --skill-size: 12px;
+  --skill-line: 17px;
+}
+
+.about-page-shell {
+  align-items: stretch;
+}
+
+.about-content {
+  min-width: 0;
+  height: 100vh;
+  height: 100dvh;
+  flex: 1 1 auto;
+  padding-block: 64px;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+
+.about-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.about-layout {
+  width: 100%;
+  min-height: var(--about-min-height);
+  display: flex;
+  align-items: stretch;
+  gap: var(--about-gap);
+}
+
+.about-card {
+  min-width: 0;
+  min-height: var(--about-min-height);
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: var(--about-padding);
+  border-radius: var(--about-radius);
+  background: var(--card);
+}
+
+.about-card h2,
+.about-details,
+.about-details dt,
+.about-details dd {
+  margin: 0;
+}
+
+.about-card h2 {
+  font-size: var(--about-title-size);
+  font-weight: 500;
+  line-height: var(--about-title-line);
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--about-row-gap);
+  padding-top: 24px;
+}
+
+.about-row {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: var(--about-text-size);
+  font-weight: 300;
+  line-height: var(--about-text-line);
+}
+
+.about-row dt {
+  width: var(--about-label-width);
+  flex: 0 0 var(--about-label-width);
+  color: var(--muted);
+}
+
+.about-row dd {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 64px;
+  background: var(--hover-surface);
+  font-size: var(--skill-size);
+  line-height: var(--skill-line);
+  white-space: nowrap;
+}
+
+.skill img {
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex: 0 0 16px;
+}
+
+.resume-button {
+  width: 100%;
+  height: var(--about-button-height);
+  min-height: var(--about-button-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 0 20px;
+  border: 1px solid var(--muted);
+  border-radius: 16px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--about-text-size);
+  font-weight: 300;
+  line-height: var(--about-text-line);
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.resume-button svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex: 0 0 20px;
+}
+
+.about-photo-frame {
+  width: var(--about-photo-width);
+  min-height: var(--about-min-height);
+  flex: 0 0 var(--about-photo-width);
+  border-radius: var(--about-radius);
+  overflow: hidden;
+}
+
+.about-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.resume-button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .resume-button:hover {
+    border-color: var(--text);
+    background: var(--text);
+    color: var(--card);
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+  :root {
+    --about-gap: clamp(24px, calc(5vw - 40px), 32px);
+    --about-photo-width: clamp(296px, calc(35vw - 152px), 352px);
+    --about-radius: clamp(32px, calc(10vw - 96px), 48px);
+    --about-padding: clamp(24px, calc(5vw - 40px), 32px);
+    --about-min-height: clamp(560px, calc(17.5vw + 336px), 588px);
+    --about-title-size: clamp(32px, calc(2.5vw), 36px);
+    --about-title-line: clamp(39px, calc(3.125vw - 1px), 44px);
+    --about-text-size: clamp(14px, calc(1.25vw - 2px), 16px);
+    --about-text-line: clamp(20px, calc(1.875vw - 4px), 23px);
+    --about-label-width: clamp(100px, calc(25vw - 220px), 140px);
+    --about-button-height: clamp(56px, calc(5vw - 8px), 64px);
+    --skill-size: clamp(12px, calc(1.25vw - 4px), 14px);
+    --skill-line: clamp(17px, calc(1.875vw - 7px), 20px);
+  }
+}
+
+@media (min-width: 1441px) {
+  :root {
+    --about-gap: clamp(32px, calc(6.666667vw - 64px), 64px);
+    --about-photo-width: clamp(352px, calc(33.333333vw - 128px), 512px);
+    --about-radius: 48px;
+    --about-padding: clamp(32px, calc(1.666667vw + 8px), 40px);
+    --about-min-height: clamp(588px, calc(17.5vw + 336px), 672px);
+    --about-title-size: clamp(36px, 2.5vw, 48px);
+    --about-title-line: clamp(44px, calc(2.916667vw + 2px), 58px);
+    --about-text-size: clamp(16px, calc(0.833333vw + 4px), 20px);
+    --about-text-line: clamp(23px, calc(1.041667vw + 8px), 28px);
+    --about-label-width: clamp(140px, calc(4.166667vw + 80px), 160px);
+    --about-row-gap: clamp(16px, calc(1.666667vw - 8px), 24px);
+    --about-button-height: 64px;
+    --skill-size: clamp(14px, calc(0.416667vw + 8px), 16px);
+    --skill-line: clamp(20px, calc(0.625vw + 11px), 23px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-button {
+    transition-duration: 0.01ms;
+  }
+}
