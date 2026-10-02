@@ -59,15 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle.dataset.themeToggle = "";
   toggle.innerHTML = `
     <span class="theme-toggle-option theme-toggle-light" aria-hidden="true">
-      <svg viewBox="0 0 16 16" fill="none">
-        <circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="1.25" />
-        <path d="M8 1.5v1.25M8 13.25v1.25M14.5 8h-1.25M2.75 8H1.5M12.6 3.4l-.88.88M4.28 11.72l-.88.88M12.6 12.6l-.88-.88M4.28 4.28l-.88-.88" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
-      </svg>
+      <img class="theme-icon theme-icon-outline" src="assets/SunDim.svg" alt="">
+      <img class="theme-icon theme-icon-filled" src="assets/SunDim-1.svg" alt="">
     </span>
     <span class="theme-toggle-option theme-toggle-dark" aria-hidden="true">
-      <svg viewBox="0 0 16 16" fill="none">
-        <path d="M13.5 9.76A5.75 5.75 0 0 1 6.24 2.5 5.76 5.76 0 1 0 13.5 9.76Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
+      <img class="theme-icon theme-icon-outline" src="assets/Moon.svg" alt="">
+      <img class="theme-icon theme-icon-filled" src="assets/Moon-1.svg" alt="">
     </span>
   `;
 

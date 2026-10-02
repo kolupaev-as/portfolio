@@ -3,6 +3,7 @@
   --page: #0b0b0b;
   --card: #0f0f0f;
   --hover-surface: #121212;
+  --menu-hover-surface: #121212;
   --text: #eeeeee;
   --muted: #7b7b7b;
   --social-hover: #838383;
@@ -40,6 +41,7 @@
   --page: #fafafa;
   --card: #ffffff;
   --hover-surface: #eeeeee;
+  --menu-hover-surface: #f6f6f6;
   --text: #0b0b0b;
   --muted: #7b7b7b;
   --social-hover: #a5a5a5;
@@ -221,6 +223,7 @@ a {
 .theme-toggle-option {
   width: 46px;
   height: 30px;
+  position: relative;
   display: flex;
   flex: 0 0 46px;
   align-items: center;
@@ -230,10 +233,28 @@ a {
   color: var(--theme-icon-inactive);
 }
 
-.theme-toggle-option svg {
+.theme-icon {
+  position: absolute;
   width: 24px;
   height: 24px;
   display: block;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(48%);
+}
+
+.theme-icon-filled {
+  opacity: 0;
+}
+
+:root[data-theme="dark"] .theme-toggle-dark .theme-icon-outline,
+:root[data-theme="light"] .theme-toggle-light .theme-icon-outline {
+  opacity: 0;
+}
+
+:root[data-theme="dark"] .theme-toggle-dark .theme-icon-filled,
+:root[data-theme="light"] .theme-toggle-light .theme-icon-filled {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(4%);
 }
 
 :root[data-theme="dark"] .theme-toggle-dark,
@@ -370,7 +391,7 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
   .menu-item:not(.menu-item-active):hover {
-    background: var(--hover-surface);
+    background: var(--menu-hover-surface);
   }
 
   .social-icon:hover {
