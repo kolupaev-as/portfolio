@@ -193,8 +193,8 @@ a {
 
 .social-icon,
 .social-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   display: block;
 }
 
@@ -208,9 +208,9 @@ a {
   display: flex;
   flex: 0 0 94px;
   align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 0 12px;
+  justify-content: space-between;
+  gap: 0;
+  padding: 1px;
   border: 0;
   border-radius: 999px;
   background: var(--theme-track);
@@ -219,20 +219,20 @@ a {
 }
 
 .theme-toggle-option {
-  width: 24px;
-  height: 24px;
+  width: 46px;
+  height: 30px;
   display: flex;
-  flex: 0 0 24px;
+  flex: 0 0 46px;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 999px;
   background: transparent;
   color: var(--theme-icon-inactive);
 }
 
 .theme-toggle-option svg {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   display: block;
 }
 
