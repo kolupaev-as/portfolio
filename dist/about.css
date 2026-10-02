@@ -47,7 +47,7 @@
   padding: 16px;
   border-radius: var(--about-radius);
   overflow: hidden;
-  background: #0f0f0f;
+  background: var(--card);
 }
 
 .about-main {
@@ -121,7 +121,7 @@
   gap: 6px;
   padding: 4px var(--skill-padding-inline);
   border-radius: 64px;
-  background: #161616;
+  background: var(--skill-surface);
   font-size: var(--skill-size);
   line-height: var(--skill-line);
   white-space: nowrap;

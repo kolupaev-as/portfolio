@@ -6,6 +6,13 @@
   --text: #eeeeee;
   --muted: #7b7b7b;
   --social-hover: #838383;
+  --active-surface: #eeeeee;
+  --active-text: #0f0f0f;
+  --skill-surface: #161616;
+  --theme-track: #161616;
+  --theme-knob: #eeeeee;
+  --theme-icon-active: #0b0b0b;
+  --theme-icon-inactive: #7b7b7b;
 
   /* Hero-1280 */
   --page-padding: 48px;
@@ -26,6 +33,23 @@
   --meta-size: 12px;
   --meta-line: 17px;
   --tag-gap: 8px;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #fafafa;
+  --card: #ffffff;
+  --hover-surface: #eeeeee;
+  --text: #0b0b0b;
+  --muted: #7b7b7b;
+  --social-hover: #a5a5a5;
+  --active-surface: #eaeaeb;
+  --active-text: #0b0b0b;
+  --skill-surface: #eeeeee;
+  --theme-track: #eaeaeb;
+  --theme-knob: #ffffff;
+  --theme-icon-active: #0b0b0b;
+  --theme-icon-inactive: #7b7b7b;
 }
 
 * {
@@ -148,13 +172,22 @@ a {
 }
 
 .menu-item-active {
-  background: var(--text);
-  color: var(--card);
+  background: var(--active-surface);
+  color: var(--active-text);
+}
+
+.sidebar-footer,
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-footer {
+  width: 100%;
+  justify-content: space-between;
 }
 
 .socials {
-  display: flex;
-  align-items: flex-start;
   gap: 24px;
 }
 
@@ -167,6 +200,51 @@ a {
 
 .social-icon {
   color: var(--text);
+}
+
+.theme-toggle {
+  width: 94px;
+  height: 32px;
+  display: flex;
+  flex: 0 0 94px;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--theme-track);
+  color: var(--theme-icon-inactive);
+  cursor: pointer;
+}
+
+.theme-toggle-option {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--theme-icon-inactive);
+}
+
+.theme-toggle-option svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle-dark,
+:root[data-theme="light"] .theme-toggle-light {
+  background: var(--theme-knob);
+  color: var(--theme-icon-active);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 4px;
 }
 
 .cases {
@@ -297,6 +375,11 @@ a {
 
   .social-icon:hover {
     color: var(--social-hover);
+  }
+
+  :root[data-theme="dark"] .theme-toggle:hover .theme-toggle-light,
+  :root[data-theme="light"] .theme-toggle:hover .theme-toggle-dark {
+    color: var(--text);
   }
 
   .case-card:hover {
