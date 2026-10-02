@@ -59,12 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle.dataset.themeToggle = "";
   toggle.innerHTML = `
     <span class="theme-toggle-option theme-toggle-light" aria-hidden="true">
-      <img class="theme-icon theme-icon-outline" src="assets/SunDim.svg" alt="">
-      <img class="theme-icon theme-icon-filled" src="assets/SunDim-1.svg" alt="">
+      <img class="theme-icon theme-icon-outline" src="/assets/SunDim.svg" alt="">
+      <img class="theme-icon theme-icon-filled" src="/assets/SunDim-1.svg" alt="">
     </span>
     <span class="theme-toggle-option theme-toggle-dark" aria-hidden="true">
-      <img class="theme-icon theme-icon-outline" src="assets/Moon.svg" alt="">
-      <img class="theme-icon theme-icon-filled" src="assets/Moon-1.svg" alt="">
+      <img class="theme-icon theme-icon-outline" src="/assets/Moon.svg" alt="">
+      <img class="theme-icon theme-icon-filled" src="/assets/Moon-1.svg" alt="">
     </span>
   `;
 
