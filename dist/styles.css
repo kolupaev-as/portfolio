@@ -156,11 +156,16 @@ a {
 }
 
 .menu {
+  --menu-fluid-base: transparent;
+  position: relative;
   display: flex;
   flex-direction: column;
+  isolation: isolate;
 }
 
 .menu-item {
+  position: relative;
+  z-index: 2;
   width: 100%;
   height: var(--menu-height);
   display: flex;
@@ -173,6 +178,34 @@ a {
   font-size: 20px;
   font-weight: 300;
   line-height: 28px;
+}
+
+.menu-fluid-highlight {
+  --fluid-x: 0px;
+  --fluid-y: 0px;
+  --fluid-width: 100%;
+  --fluid-height: var(--menu-height);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: var(--fluid-width);
+  height: var(--fluid-height);
+  border-radius: 24px;
+  pointer-events: none;
+  opacity: 0;
+  background: var(--menu-hover-surface);
+  transform: translate3d(var(--fluid-x), var(--fluid-y), 0);
+  transition:
+    transform 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    width 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    height 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 140ms ease-out;
+  will-change: transform, width, height, opacity;
+}
+
+.menu-fluid-highlight.is-visible {
+  opacity: 1;
 }
 
 .menu-item-active {
@@ -460,6 +493,10 @@ a {
   .case-card:hover .case-cover {
     transform: scale(1.082);
   }
+
+  .menu.menu-fluid-enabled .menu-item:not(.menu-item-active):hover {
+    background: var(--menu-fluid-base);
+  }
 }
 
 .wide-only {
@@ -601,6 +638,7 @@ a {
   }
 
   .menu {
+    --menu-fluid-base: var(--card);
     gap: 16px;
   }
 
@@ -795,6 +833,7 @@ a {
   }
 
   .home-page-shell .menu {
+    --menu-fluid-base: var(--tablet-control-surface);
     gap: 16px;
   }
 
@@ -1083,6 +1122,7 @@ a {
   }
 
   .home-page-shell .menu {
+    --menu-fluid-base: var(--tablet-control-surface);
     gap: 16px;
   }
 
