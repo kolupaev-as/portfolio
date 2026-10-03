@@ -178,6 +178,38 @@ a {
   color: var(--active-text);
 }
 
+.menu-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.menu-icon img {
+  position: absolute;
+  inset: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.menu-icon-dark {
+  display: none;
+}
+
+.menu-icon-light {
+  display: block;
+}
+
+:root[data-theme="light"] .menu-icon-dark,
+.menu-item-active .menu-icon-dark {
+  display: block;
+}
+
+:root[data-theme="light"] .menu-icon-light,
+.menu-item-active .menu-icon-light {
+  display: none;
+}
+
 .sidebar-footer,
 .socials {
   display: flex;
