@@ -1,11 +1,11 @@
 const caseScroll = document.querySelector("[data-case-scroll]");
 const scrollToTopButton = document.querySelector("[data-scroll-to-top]");
 const closeCaseLink = document.querySelector("[data-close-case]");
-const tabletCaseQuery = window.matchMedia("(min-width: 768px) and (max-width: 900px)");
+const compactCaseQuery = window.matchMedia("(max-width: 900px)");
 
 function syncCloseCaseLink() {
   if (closeCaseLink) {
-    closeCaseLink.href = tabletCaseQuery.matches ? "/#projects" : "/";
+    closeCaseLink.href = compactCaseQuery.matches ? "/#projects" : "/";
   }
 }
 
@@ -20,4 +20,4 @@ scrollToTopButton?.addEventListener("click", () => {
 });
 
 syncCloseCaseLink();
-tabletCaseQuery.addEventListener?.("change", syncCloseCaseLink);
+compactCaseQuery.addEventListener?.("change", syncCloseCaseLink);

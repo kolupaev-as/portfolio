@@ -304,6 +304,115 @@
   }
 }
 
+@media (max-width: 767px) {
+  :root {
+    --about-gap: 24px;
+    --about-photo-radius: 18px;
+    --about-radius: 32px;
+    --about-main-padding: 0px;
+    --about-min-height: 0px;
+    --about-info-gap: 24px;
+    --about-title-size: 24px;
+    --about-title-line: 29px;
+    --about-text-size: 14px;
+    --about-text-line: 20px;
+    --about-label-width: auto;
+    --about-column-gap: 8px;
+    --about-row-gap: 24px;
+    --about-button-height: 48px;
+    --skill-size: 14px;
+    --skill-line: 20px;
+    --skill-padding-inline: 12px;
+  }
+
+  .about-content {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding: 0 24px 32px;
+  }
+
+  .about-body {
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 16px;
+    border-radius: 32px;
+  }
+
+  .about-main {
+    display: contents;
+  }
+
+  .about-info {
+    gap: 24px;
+  }
+
+  .about-details {
+    gap: 24px;
+  }
+
+  .about-row {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .about-row dt {
+    width: auto;
+    flex: none;
+  }
+
+  .skill-list {
+    align-items: flex-start;
+    gap: 8px 4px;
+  }
+
+  .skill {
+    min-height: 28px;
+    gap: 4px;
+    padding: 4px 12px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .resume-button {
+    height: 48px;
+    min-height: 48px;
+    padding-inline: 16px;
+    border: 0;
+    border-radius: 16px;
+    background: var(--text);
+    color: var(--page);
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .resume-button:active {
+    background: #cdcdcd;
+  }
+
+  :root[data-theme="light"] .resume-button:active {
+    background: #181818;
+  }
+
+  .about-photo-frame {
+    width: 100%;
+    height: 358px;
+    aspect-ratio: auto;
+    align-self: auto;
+    flex: none;
+    border-radius: 18px;
+  }
+
+  .about-photo {
+    object-position: center 66.667%;
+    transform: scale(1.13419);
+  }
+}
+
 @media (min-width: 1281px) and (max-width: 1440px) {
   :root {
     --about-gap: clamp(24px, calc(5vw - 40px), 32px);

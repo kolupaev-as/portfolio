@@ -10,10 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css?v=tablet-768-1" />
-    <link rel="stylesheet" href="/case-page.css?v=tablet-768-4" />
+    <link rel="stylesheet" href="/styles.css?v=mobile-1" />
+    <link rel="stylesheet" href="/case-page.css?v=mobile-1" />
     <script src="/typography.js" defer></script>
-    <script src="/case-page.js?v=tablet-768-2" defer></script>
+    <script src="/case-page.js?v=mobile-1" defer></script>
   </head>
   <body>
     <main class="portfolio-shell case-page-shell">
@@ -37,6 +37,13 @@
       <section class="case-column" aria-label="Кейс «HR-трансформация в ЮТэйр»">
         <div class="case-scroll" data-case-scroll>
           <header class="case-toolbar">
+            <div class="case-mobile-profile" aria-hidden="true">
+              <img class="case-mobile-photo" src="/assets/avatar.png" width="48" height="48" alt="" />
+              <div class="case-mobile-copy">
+                <span class="case-mobile-name">Колупаев Андрей</span>
+                <span class="case-mobile-role">UX/UI Designer</span>
+              </div>
+            </div>
             <button class="case-toolbar-button" type="button" data-scroll-to-top aria-label="Прокрутить кейс в начало"><svg viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="24.25" fill="none" stroke="currentColor" stroke-width="1.5" /><path d="m15 29 10-10 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
             <a class="case-toolbar-button" href="/" data-close-case aria-label="Закрыть кейс и вернуться к списку работ"><svg viewBox="0 0 50 50" aria-hidden="true"><circle cx="25" cy="25" r="24.25" fill="none" stroke="currentColor" stroke-width="1.5" /><path d="m18 18 14 14M32 18 18 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg></a>
           </header>

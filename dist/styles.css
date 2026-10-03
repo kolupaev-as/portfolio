@@ -1012,6 +1012,298 @@ a {
   }
 }
 
+/* Mobile-menu, Mobile-cases и Mobile-about из макета Paper. */
+@media (max-width: 767px) {
+  :root {
+    --page-padding: 24px;
+    --layout-gap: 0px;
+    --sidebar-width: 100%;
+    --profile-title-size: 20px;
+    --profile-title-line: 28px;
+    --profile-role-size: 16px;
+    --profile-role-line: 23px;
+    --menu-height: 72px;
+    --card-height: auto;
+    --card-content-gap: 24px;
+    --cover-width: 100%;
+    --case-title-size: 24px;
+    --case-title-line: 29px;
+    --case-body-size: 14px;
+    --case-body-line: 20px;
+    --meta-size: 12px;
+    --meta-line: 17px;
+    --tag-gap: 8px;
+  }
+
+  body,
+  .portfolio-shell,
+  .home-page-shell,
+  .about-page-shell {
+    min-width: 0;
+  }
+
+  .home-page-shell,
+  .about-page-shell {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    display: block;
+    padding: 0;
+  }
+
+  .home-page-shell .sidebar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 32px 24px;
+  }
+
+  .about-page-shell .sidebar,
+  :root[data-tablet-view="projects"] .home-page-shell .sidebar {
+    display: none;
+  }
+
+  .home-page-shell .sidebar-top {
+    gap: 48px;
+  }
+
+  .home-page-shell .profile {
+    gap: 24px;
+  }
+
+  .home-page-shell .profile-photo {
+    width: 80px;
+    height: 80px;
+    flex-basis: 80px;
+    border-radius: 24px;
+  }
+
+  .home-page-shell .profile-copy {
+    gap: 4px;
+  }
+
+  .home-page-shell .menu {
+    gap: 16px;
+  }
+
+  .home-page-shell .menu-item,
+  .home-page-shell .menu-item-active {
+    height: 72px;
+    padding: 8px 24px;
+    border-radius: 24px;
+    background: var(--tablet-control-surface);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  .home-page-shell .menu-item-label {
+    width: 100%;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .home-page-shell .menu-icon {
+    order: 2;
+  }
+
+  .home-page-shell .menu-item .menu-icon-dark {
+    display: none;
+  }
+
+  .home-page-shell .menu-item .menu-icon-light {
+    display: block;
+  }
+
+  :root[data-theme="light"] .home-page-shell .menu-item .menu-icon-dark {
+    display: block;
+  }
+
+  :root[data-theme="light"] .home-page-shell .menu-item .menu-icon-light {
+    display: none;
+  }
+
+  .home-page-shell .menu-item-arrow {
+    display: none;
+  }
+
+  .home-page-shell .sidebar-footer {
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .home-page-shell .socials {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .home-page-shell .social-icon {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background: var(--tablet-control-surface);
+  }
+
+  .home-page-shell .social-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-page-shell .theme-toggle {
+    flex: 0 0 32px;
+  }
+
+  .home-page-shell .cases {
+    display: none;
+  }
+
+  :root[data-tablet-view="projects"] .home-page-shell .cases {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    gap: 0;
+    padding: 0 24px 32px;
+  }
+
+  .tablet-section-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    height: 96px;
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0 16px;
+    background: var(--page);
+    transform: translateZ(0);
+  }
+
+  .tablet-section-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .tablet-section-photo {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .tablet-section-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .tablet-section-name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+  }
+
+  .tablet-section-role {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 17px;
+  }
+
+  .tablet-menu-button,
+  .tablet-menu-button svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+
+  .tablet-menu-button {
+    flex: 0 0 32px;
+    color: var(--text);
+  }
+
+  .home-page-shell .case-card {
+    height: auto;
+    min-height: 0;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 24px;
+    padding: 16px;
+    border-radius: 32px;
+  }
+
+  .home-page-shell .case-card + .case-card {
+    margin-top: 16px;
+  }
+
+  .home-page-shell .case-media {
+    order: -1;
+    width: 100%;
+    height: 171px;
+    flex: 0 0 171px;
+    border-radius: 18px;
+  }
+
+  .home-page-shell .case-copy {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .home-page-shell .case-heading {
+    gap: 8px;
+  }
+
+  .home-page-shell .case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .home-page-shell .tags {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .home-page-shell .tags li,
+  .home-page-shell .case-meta time {
+    padding: 4px 8px;
+    border: 1px solid var(--muted);
+    border-radius: 64px;
+  }
+
+  .home-page-shell .menu-item:active,
+  .home-page-shell .social-icon:active {
+    background: #181818;
+  }
+
+  :root[data-theme="light"] .home-page-shell .menu-item:active,
+  :root[data-theme="light"] .home-page-shell .social-icon:active {
+    background: #cdcdcd;
+  }
+}
+
 /* Плавный переход от Hero-1280 к Hero-1440. */
 @media (min-width: 1281px) and (max-width: 1440px) {
   :root {

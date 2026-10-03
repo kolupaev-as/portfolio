@@ -42,6 +42,10 @@
   transform: translateZ(0);
 }
 
+.case-mobile-profile {
+  display: none;
+}
+
 .case-toolbar-button {
   width: 64px;
   height: 64px;
@@ -54,6 +58,10 @@
   background: transparent;
   color: var(--text);
   cursor: pointer;
+}
+
+.case-toolbar-button[data-close-case] {
+  position: relative;
 }
 
 .case-toolbar-button svg {
@@ -196,7 +204,7 @@
 
   .case-toolbar {
     height: 84px;
-    padding: 16px;
+    padding: 16px 48px;
     box-shadow: 0 -2px 0 2px var(--page);
   }
 
@@ -221,5 +229,108 @@
 
   .case-detail-image:last-child {
     border-radius: 0 0 28px 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .case-page-shell {
+    min-width: 0;
+    display: block;
+    padding: 0;
+  }
+
+  .case-page-shell .sidebar {
+    display: none;
+  }
+
+  .case-column {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding-top: 0;
+  }
+
+  .case-toolbar {
+    height: 96px;
+    padding: 32px 24px 16px;
+    box-shadow: 0 -2px 0 2px var(--page);
+  }
+
+  .case-mobile-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .case-mobile-photo {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .case-mobile-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .case-mobile-name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+    white-space: nowrap;
+  }
+
+  .case-mobile-role {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 17px;
+    white-space: nowrap;
+  }
+
+  .case-toolbar-button[data-scroll-to-top] {
+    display: none;
+  }
+
+  .case-toolbar-button[data-close-case] {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+  }
+
+  .case-toolbar-button[data-close-case] svg {
+    display: none;
+  }
+
+  .case-toolbar-button[data-close-case]::before,
+  .case-toolbar-button[data-close-case]::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 15px;
+    width: 22px;
+    height: 1.5px;
+    border-radius: 999px;
+    background: currentColor;
+  }
+
+  .case-toolbar-button[data-close-case]::before {
+    transform: rotate(45deg);
+  }
+
+  .case-toolbar-button[data-close-case]::after {
+    transform: rotate(-45deg);
+  }
+
+  .case-body {
+    padding: 0 24px 32px;
+  }
+
+  .case-detail-image:first-child,
+  .case-detail-image:last-child {
+    border-radius: 0;
   }
 }
