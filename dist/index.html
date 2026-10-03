@@ -16,11 +16,12 @@
     />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <script src="/theme.js?v=themes-2"></script>
-    <link rel="stylesheet" href="/styles.css?v=menu-icons-2" />
+    <script src="/tablet-nav.js?v=tablet-768-1"></script>
+    <link rel="stylesheet" href="/styles.css?v=tablet-768-1" />
     <script src="/typography.js" defer></script>
   </head>
   <body>
-    <main class="portfolio-shell">
+    <main class="portfolio-shell home-page-shell">
       <aside class="sidebar" aria-label="Основная информация">
         <div class="sidebar-top">
           <header class="profile">
@@ -92,6 +93,20 @@
       </aside>
 
       <section class="cases" id="projects" aria-label="Проекты">
+        <header class="tablet-section-header">
+          <div class="tablet-section-profile">
+            <img class="tablet-section-photo" src="/assets/avatar.png" width="48" height="48" alt="" />
+            <div class="tablet-section-copy">
+              <span class="tablet-section-name">Колупаев Андрей</span>
+              <span class="tablet-section-role">UX/UI Designer</span>
+            </div>
+          </div>
+          <a class="tablet-menu-button" href="/" aria-label="Вернуться в главное меню">
+            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </a>
+        </header>
         <a class="case-card" href="/case-3/" aria-label="Открыть кейс «Редизайн клиентского сообщества»">
           <div class="case-copy">
             <div class="case-heading">

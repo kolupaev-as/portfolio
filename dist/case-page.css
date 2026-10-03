@@ -31,7 +31,7 @@
 .case-toolbar {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   width: 100%;
   height: 96px;
   display: flex;
@@ -39,6 +39,7 @@
   justify-content: space-between;
   padding: 16px;
   background: var(--page);
+  transform: translateZ(0);
 }
 
 .case-toolbar-button {
@@ -62,6 +63,8 @@
 }
 
 .case-body {
+  position: relative;
+  z-index: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -95,4 +98,128 @@
 .social-icon:focus-visible {
   outline: 2px solid var(--text);
   outline-offset: 4px;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .case-page-shell .sidebar {
+    padding-block: 32px;
+  }
+
+  .case-column {
+    padding-top: 32px;
+  }
+
+  .case-toolbar {
+    height: 80px;
+    padding: 12px;
+  }
+
+  .case-toolbar-button {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+
+  .case-toolbar-button svg {
+    width: 46px;
+    height: 46px;
+  }
+
+  .case-body {
+    padding: 20px 12px 0;
+  }
+
+  .case-detail-image:first-child {
+    border-radius: 36px 36px 0 0;
+  }
+
+  .case-detail-image:last-child {
+    border-radius: 0 0 36px 36px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1279px) {
+  .case-page-shell .sidebar {
+    padding-block: 64px;
+  }
+
+  .case-column {
+    padding-top: 48px;
+  }
+
+  .case-toolbar {
+    height: 96px;
+    padding: 16px;
+  }
+
+  .case-toolbar-button {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+  }
+
+  .case-toolbar-button svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .case-body {
+    padding: 24px 16px 0;
+  }
+
+  .case-detail-image:first-child {
+    border-radius: 48px 48px 0 0;
+  }
+
+  .case-detail-image:last-child {
+    border-radius: 0 0 48px 48px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .case-page-shell {
+    min-width: 768px;
+    display: block;
+    padding: 0;
+  }
+
+  .case-page-shell .sidebar {
+    display: none;
+  }
+
+  .case-column {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    padding-top: 0;
+  }
+
+  .case-toolbar {
+    height: 84px;
+    padding: 16px;
+    box-shadow: 0 -2px 0 2px var(--page);
+  }
+
+  .case-toolbar-button {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+  }
+
+  .case-toolbar-button svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .case-body {
+    padding: 16px 48px 0;
+  }
+
+  .case-detail-image:first-child {
+    border-radius: 28px 28px 0 0;
+  }
+
+  .case-detail-image:last-child {
+    border-radius: 0 0 28px 28px;
+  }
 }

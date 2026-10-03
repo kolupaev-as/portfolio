@@ -14,6 +14,7 @@
   --theme-knob: #eeeeee;
   --theme-icon-active: #0b0b0b;
   --theme-icon-inactive: #7b7b7b;
+  --tablet-control-surface: #121212;
 
   /* Hero-1280 */
   --page-padding: 48px;
@@ -52,6 +53,7 @@
   --theme-knob: #ffffff;
   --theme-icon-active: #0b0b0b;
   --theme-icon-inactive: #7b7b7b;
+  --tablet-control-surface: #eaeaeb;
 }
 
 * {
@@ -325,6 +327,10 @@ a {
   scrollbar-width: none;
 }
 
+.tablet-section-header {
+  display: none;
+}
+
 .cases::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -463,6 +469,546 @@ a {
 @media (max-width: 1280px) {
   .case-heading {
     gap: 16px;
+  }
+}
+
+/* Планшет в горизонтальной ориентации: сохраняем боковую навигацию и
+   двухколоночные карточки, но уплотняем всю сетку. */
+@media (min-width: 768px) and (max-width: 1279px) {
+  :root {
+    --page-padding: 32px;
+    --layout-gap: 32px;
+    --sidebar-width: 264px;
+    --profile-title-size: 18px;
+    --profile-title-line: 25px;
+    --profile-role-size: 16px;
+    --profile-role-line: 22px;
+    --menu-height: 64px;
+    --card-height: 400px;
+    --card-content-gap: 16px;
+    --cover-width: 248px;
+    --case-title-size: 22px;
+    --case-title-line: 27px;
+    --case-body-size: 13px;
+    --case-body-line: 18px;
+    --meta-size: 11px;
+    --meta-line: 16px;
+    --tag-gap: 6px;
+  }
+
+  body,
+  .portfolio-shell {
+    min-width: 768px;
+  }
+
+  .sidebar {
+    padding-block: 32px;
+  }
+
+  .sidebar-top {
+    gap: 32px;
+  }
+
+  .profile {
+    gap: 16px;
+  }
+
+  .profile-photo {
+    width: 80px;
+    height: 80px;
+    flex-basis: 80px;
+    border-radius: 20px;
+  }
+
+  .menu-item {
+    padding-inline: 16px;
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .menu-item-label {
+    gap: 12px;
+  }
+
+  .socials {
+    gap: 16px;
+  }
+
+  .cases {
+    gap: 20px;
+  }
+
+  .case-card {
+    gap: var(--card-content-gap);
+    padding: 12px;
+    border-radius: 36px;
+  }
+
+  .case-copy {
+    padding: 16px;
+  }
+
+  .case-media {
+    border-radius: 28px;
+  }
+
+  .tags li {
+    padding: 7px 10px;
+  }
+}
+
+/* Hero-1024 из макета Paper. */
+@media (min-width: 901px) and (max-width: 1279px) {
+  :root {
+    --page-padding: 48px;
+    --layout-gap: 48px;
+    --sidebar-width: 248px;
+    --profile-title-size: 14px;
+    --profile-title-line: 20px;
+    --profile-role-size: 12px;
+    --profile-role-line: 17px;
+    --menu-height: 72px;
+    --card-height: 416px;
+    --card-content-gap: 24px;
+    --cover-width: 272px;
+    --case-title-size: 20px;
+    --case-title-line: 24px;
+    --case-body-size: 12px;
+    --case-body-line: 17px;
+    --meta-size: 10px;
+    --meta-line: 14px;
+    --tag-gap: 8px;
+  }
+
+  .sidebar {
+    padding-block: 64px;
+  }
+
+  .sidebar-top {
+    gap: 40px;
+  }
+
+  .profile {
+    gap: 24px;
+  }
+
+  .profile-photo {
+    width: 80px;
+    height: 80px;
+    flex-basis: 80px;
+    border-radius: 20px;
+  }
+
+  .menu {
+    gap: 16px;
+  }
+
+  .menu-item {
+    padding-inline: 24px;
+    border-radius: 24px;
+    background: var(--card);
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .menu-item-active {
+    background: var(--active-surface);
+  }
+
+  .menu-item-label {
+    gap: 16px;
+  }
+
+  .sidebar-footer {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .theme-toggle {
+    flex: 0 0 32px;
+  }
+
+  .socials {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .social-icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background: var(--card);
+  }
+
+  .social-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cases {
+    gap: 48px;
+    padding-block: 64px;
+  }
+
+  .case-card {
+    gap: var(--card-content-gap);
+    padding: 16px;
+    border-radius: 48px;
+  }
+
+  .case-copy {
+    padding: 24px;
+  }
+
+  .case-heading {
+    gap: 24px;
+  }
+
+  .case-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .case-meta time {
+    padding: 6px 10px;
+    border: 1px solid var(--muted);
+    border-radius: 64px;
+  }
+
+  .case-media {
+    border-radius: 36px;
+  }
+
+  .tags li {
+    padding: 6px 10px;
+  }
+}
+
+/* Hero-768 и Cases-768 из макета Paper. */
+@media (min-width: 768px) and (max-width: 900px) {
+  :root {
+    --page-padding: 48px;
+    --layout-gap: 0px;
+    --sidebar-width: 100%;
+    --profile-title-size: 20px;
+    --profile-title-line: 28px;
+    --profile-role-size: 16px;
+    --profile-role-line: 23px;
+    --menu-height: 72px;
+    --card-height: 445px;
+    --card-content-gap: 16px;
+    --cover-width: auto;
+    --case-title-size: 20px;
+    --case-title-line: 24px;
+    --case-body-size: 14px;
+    --case-body-line: 20px;
+    --meta-size: 12px;
+    --meta-line: 17px;
+    --tag-gap: 8px;
+  }
+
+  .home-page-shell,
+  .about-page-shell {
+    min-width: 768px;
+    height: 100vh;
+    height: 100dvh;
+    display: block;
+    padding: 0;
+  }
+
+  .case-page-shell {
+    --page-padding: 24px;
+    --layout-gap: 24px;
+    --sidebar-width: 200px;
+    --profile-title-size: 18px;
+    --profile-title-line: 25px;
+    --profile-role-size: 16px;
+    --profile-role-line: 22px;
+    --menu-height: 64px;
+  }
+
+  .case-page-shell .profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .case-page-shell .menu-item {
+    padding-inline: 14px;
+  }
+
+  .case-page-shell .menu-item-arrow {
+    width: 20px;
+    height: 20px;
+    flex-basis: 20px;
+  }
+
+  .case-page-shell .sidebar-footer {
+    gap: 8px;
+  }
+
+  .case-page-shell .socials {
+    gap: 12px;
+  }
+
+  .home-page-shell .sidebar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 48px;
+  }
+
+  .about-page-shell .sidebar {
+    display: none;
+  }
+
+  :root[data-tablet-view="projects"] .home-page-shell .sidebar {
+    display: none;
+  }
+
+  .home-page-shell .sidebar-top {
+    gap: 48px;
+  }
+
+  .home-page-shell .profile {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .home-page-shell .profile-photo {
+    width: 80px;
+    height: 80px;
+    flex-basis: 80px;
+    border-radius: 24px;
+  }
+
+  .home-page-shell .profile-copy {
+    gap: 4px;
+  }
+
+  .home-page-shell .menu {
+    gap: 16px;
+  }
+
+  .home-page-shell .menu-item,
+  .home-page-shell .menu-item-active {
+    height: 72px;
+    padding: 8px 24px;
+    border-radius: 24px;
+    background: var(--tablet-control-surface);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  .home-page-shell .menu-item-label {
+    width: 100%;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .home-page-shell .menu-icon {
+    order: 2;
+  }
+
+  .home-page-shell .menu-item .menu-icon-dark {
+    display: none;
+  }
+
+  .home-page-shell .menu-item .menu-icon-light {
+    display: block;
+  }
+
+  :root[data-theme="light"] .home-page-shell .menu-item .menu-icon-dark {
+    display: block;
+  }
+
+  :root[data-theme="light"] .home-page-shell .menu-item .menu-icon-light {
+    display: none;
+  }
+
+  .home-page-shell .menu-item-arrow {
+    display: none;
+  }
+
+  .home-page-shell .sidebar-footer {
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .home-page-shell .socials {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .home-page-shell .social-icon {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background: var(--tablet-control-surface);
+  }
+
+  .home-page-shell .social-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-page-shell .theme-toggle {
+    flex: 0 0 32px;
+  }
+
+  .home-page-shell .cases {
+    display: none;
+  }
+
+  :root[data-tablet-view="projects"] .home-page-shell .cases {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    gap: 0;
+    padding: 0 48px 48px;
+  }
+
+  .tablet-section-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 128px;
+    min-height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 48px 0 32px;
+    background: var(--page);
+  }
+
+  .tablet-section-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .tablet-section-photo {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .tablet-section-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .tablet-section-name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+  }
+
+  .tablet-section-role {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 17px;
+  }
+
+  .tablet-menu-button,
+  .tablet-menu-button svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .tablet-menu-button {
+    flex: 0 0 24px;
+    color: var(--text);
+  }
+
+  .home-page-shell .case-card {
+    height: 445px;
+    min-height: 445px;
+    flex: 0 0 445px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 48px;
+  }
+
+  .home-page-shell .case-card + .case-card {
+    margin-top: 24px;
+  }
+
+  .home-page-shell .case-copy {
+    width: auto;
+    height: 100%;
+    flex: 1 1 0;
+    padding: 24px;
+  }
+
+  .home-page-shell .case-heading {
+    gap: 16px;
+  }
+
+  .home-page-shell .case-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .home-page-shell .tags {
+    flex-wrap: wrap;
+  }
+
+  .home-page-shell .tags li,
+  .home-page-shell .case-meta time {
+    padding: 4px 8px;
+  }
+
+  .home-page-shell .case-meta time {
+    border: 1px solid var(--muted);
+    border-radius: 64px;
+  }
+
+  .home-page-shell .case-media {
+    width: auto;
+    height: 100%;
+    flex: 1 1 0;
+    border-radius: 36px;
+  }
+
+  .home-page-shell .menu-item:active,
+  .home-page-shell .social-icon:active {
+    background: #181818;
+  }
+
+  :root[data-theme="light"] .home-page-shell .menu-item:active,
+  :root[data-theme="light"] .home-page-shell .social-icon:active {
+    background: #cdcdcd;
   }
 }
 
