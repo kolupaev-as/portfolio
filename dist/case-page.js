@@ -13,20 +13,9 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-const smoothCaseScroll = window.portfolioSmoothScroll?.get(caseScroll);
-
-if (smoothCaseScroll) {
-  smoothCaseScroll.scrollTo(0, { immediate: true });
-} else {
-  caseScroll?.scrollTo({ top: 0 });
-}
+caseScroll?.scrollTo({ top: 0 });
 
 scrollToTopButton?.addEventListener("click", () => {
-  if (smoothCaseScroll) {
-    smoothCaseScroll.scrollTo(0, { duration: 0.9 });
-    return;
-  }
-
   caseScroll?.scrollTo({ top: 0, behavior: "smooth" });
 });
 
