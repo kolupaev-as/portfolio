@@ -1,6 +1,5 @@
 :root {
   --about-gap: 24px;
-  --about-photo-radius: 28px;
   --about-radius: 32px;
   --about-main-padding: 16px;
   --about-min-height: 604px;
@@ -51,6 +50,7 @@
 }
 
 .about-main {
+  width: 100%;
   min-width: 0;
   align-self: stretch;
   flex: 1 1 auto;
@@ -173,22 +173,6 @@
   flex: 0 0 20px;
 }
 
-.about-photo-frame {
-  width: var(--cover-width);
-  align-self: stretch;
-  flex: 0 0 var(--cover-width);
-  border-radius: var(--about-photo-radius);
-  overflow: hidden;
-}
-
-.about-photo {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
 .resume-button:focus-visible {
   outline: 2px solid var(--text);
   outline-offset: 4px;
@@ -205,7 +189,6 @@
 @media (min-width: 768px) and (max-width: 1279px) {
   :root {
     --about-gap: 20px;
-    --about-photo-radius: 28px;
     --about-radius: 36px;
     --about-main-padding: 14px;
     --about-min-height: 640px;
@@ -235,7 +218,6 @@
 @media (min-width: 901px) and (max-width: 1279px) {
   :root {
     --about-gap: 24px;
-    --about-photo-radius: 28px;
     --about-radius: 32px;
     --about-main-padding: 16px;
     --about-min-height: 604px;
@@ -269,18 +251,11 @@
     gap: 48px;
   }
 
-  .about-photo-frame {
-    width: 100%;
-    aspect-ratio: 1121 / 1403;
-    align-self: auto;
-    flex: none;
-  }
 }
 
 @media (min-width: 768px) and (max-width: 900px) {
   :root {
     --about-gap: 16px;
-    --about-photo-radius: 24px;
     --about-radius: 32px;
     --about-main-padding: 12px;
     --about-min-height: 0px;
@@ -306,18 +281,11 @@
     align-self: auto;
   }
 
-  .about-photo-frame {
-    width: 100%;
-    aspect-ratio: 1121 / 1403;
-    align-self: auto;
-    flex: none;
-  }
 }
 
 @media (max-width: 767px) {
   :root {
     --about-gap: 24px;
-    --about-photo-radius: 18px;
     --about-radius: 32px;
     --about-main-padding: 0px;
     --about-min-height: 0px;
@@ -408,25 +376,11 @@
     background: #181818;
   }
 
-  .about-photo-frame {
-    width: 100%;
-    height: 358px;
-    aspect-ratio: auto;
-    align-self: auto;
-    flex: none;
-    border-radius: 18px;
-  }
-
-  .about-photo {
-    object-position: center 66.667%;
-    transform: scale(1.13419);
-  }
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
   :root {
     --about-gap: clamp(24px, calc(5vw - 40px), 32px);
-    --about-photo-radius: clamp(28px, calc(2.5vw - 4px), 32px);
     --about-radius: clamp(32px, calc(10vw - 96px), 48px);
     --about-main-padding: clamp(16px, calc(2.5vw - 16px), 20px);
     --about-min-height: clamp(604px, calc(17.5vw + 380px), 632px);
@@ -446,7 +400,6 @@
 @media (min-width: 1441px) {
   :root {
     --about-gap: clamp(32px, calc(6.666667vw - 64px), 64px);
-    --about-photo-radius: clamp(32px, calc(0.833333vw + 20px), 36px);
     --about-radius: 48px;
     --about-main-padding: clamp(20px, calc(0.833333vw + 8px), 24px);
     --about-min-height: clamp(632px, calc(17.083333vw + 386px), 714px);
