@@ -15,10 +15,8 @@
   --theme-icon-active: #0b0b0b;
   --theme-icon-inactive: #7b7b7b;
   --tablet-control-surface: #121212;
-  --motion-fast: 80ms;
-  --motion-moderate: 160ms;
-  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --motion-slide-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --theme-toggle-duration: 220ms;
+  --theme-toggle-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   /* Hero-1280 */
   --page-padding: 48px;
@@ -285,9 +283,6 @@ a {
 
 .social-icon {
   color: var(--text);
-  transition:
-    color var(--motion-fast) var(--motion-ease),
-    background-color var(--motion-fast) var(--motion-ease);
 }
 
 .theme-toggle {
@@ -306,7 +301,7 @@ a {
   background: var(--theme-track);
   color: var(--theme-icon-inactive);
   cursor: pointer;
-  transition: background-color var(--motion-fast) var(--motion-ease);
+  transition: background-color var(--theme-toggle-duration) var(--theme-toggle-ease);
 }
 
 .theme-toggle-indicator {
@@ -320,8 +315,8 @@ a {
   background: var(--theme-knob);
   transform: translate3d(46px, 0, 0);
   transition:
-    transform var(--motion-moderate) var(--motion-slide-ease),
-    background-color var(--motion-fast) var(--motion-ease);
+    transform var(--theme-toggle-duration) var(--theme-toggle-ease),
+    background-color var(--theme-toggle-duration) var(--theme-toggle-ease);
   will-change: transform;
 }
 
@@ -351,8 +346,8 @@ a {
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(48%);
   transition:
-    opacity var(--motion-fast) var(--motion-ease),
-    filter var(--motion-fast) var(--motion-ease);
+    opacity var(--theme-toggle-duration) var(--theme-toggle-ease),
+    filter var(--theme-toggle-duration) var(--theme-toggle-ease);
 }
 
 .theme-icon-filled {
@@ -410,7 +405,6 @@ a {
   border-radius: 48px;
   overflow: hidden;
   background: var(--card);
-  transition: background-color var(--motion-fast) var(--motion-ease);
 }
 
 .case-copy {
@@ -497,7 +491,7 @@ a {
   display: block;
   object-fit: cover;
   transform: scale(1);
-  transition: transform var(--motion-moderate) var(--motion-slide-ease);
+  transition: transform 300ms ease-out;
   will-change: transform;
 }
 
@@ -513,14 +507,6 @@ a {
   :root[data-theme="dark"] .theme-toggle:hover .theme-toggle-light,
   :root[data-theme="light"] .theme-toggle:hover .theme-toggle-dark {
     color: var(--text);
-  }
-
-  :root[data-theme="dark"] .theme-toggle:hover .theme-toggle-light .theme-icon-outline {
-    filter: brightness(0) saturate(100%) invert(93%);
-  }
-
-  :root[data-theme="light"] .theme-toggle:hover .theme-toggle-dark .theme-icon-outline {
-    filter: brightness(0) saturate(100%) invert(4%);
   }
 
   .case-card:hover {

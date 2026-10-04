@@ -153,10 +153,7 @@
   font-weight: 300;
   line-height: var(--about-text-line);
   cursor: pointer;
-  transition:
-    background-color var(--motion-fast) var(--motion-ease),
-    border-color var(--motion-fast) var(--motion-ease),
-    color var(--motion-fast) var(--motion-ease);
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .resume-button svg {

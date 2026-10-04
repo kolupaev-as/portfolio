@@ -58,7 +58,6 @@
   background: transparent;
   color: var(--text);
   cursor: pointer;
-  transition: color var(--motion-fast) var(--motion-ease);
 }
 
 .case-toolbar-button[data-close-case] {
