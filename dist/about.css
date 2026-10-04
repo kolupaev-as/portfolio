@@ -397,6 +397,13 @@
   }
 }
 
+@media (min-width: 1280px) {
+  .about-body {
+    width: min(100%, 1000px);
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 1441px) {
   :root {
     --about-gap: clamp(32px, calc(6.666667vw - 64px), 64px);
