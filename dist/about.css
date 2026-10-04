@@ -107,6 +107,16 @@
   flex: 1 1 auto;
 }
 
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-bio p {
+  margin: 0;
+}
+
 .skill-list {
   display: flex;
   flex-wrap: wrap;
