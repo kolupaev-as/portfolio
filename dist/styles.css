@@ -241,6 +241,15 @@ a {
   height: 24px;
 }
 
+.menu-icon-suitcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  -webkit-mask: url("/assets/SuitcaseSimple.svg") center / contain no-repeat;
+  mask: url("/assets/SuitcaseSimple.svg") center / contain no-repeat;
+}
+
 .menu-icon-dark {
   display: none;
 }
