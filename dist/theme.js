@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle.type = "button";
   toggle.dataset.themeToggle = "";
   toggle.innerHTML = `
+    <span class="theme-toggle-indicator" aria-hidden="true"></span>
     <span class="theme-toggle-option theme-toggle-light" aria-hidden="true">
       <img class="theme-icon theme-icon-outline" src="/assets/SunDim.svg" alt="">
       <img class="theme-icon theme-icon-filled" src="/assets/SunDim-1.svg" alt="">

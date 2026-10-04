@@ -15,6 +15,10 @@
   --theme-icon-active: #0b0b0b;
   --theme-icon-inactive: #7b7b7b;
   --tablet-control-surface: #121212;
+  --motion-fast: 80ms;
+  --motion-moderate: 160ms;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-slide-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   /* Hero-1280 */
   --page-padding: 48px;
@@ -281,9 +285,14 @@ a {
 
 .social-icon {
   color: var(--text);
+  transition:
+    color var(--motion-fast) var(--motion-ease),
+    background-color var(--motion-fast) var(--motion-ease);
 }
 
 .theme-toggle {
+  position: relative;
+  isolation: isolate;
   width: 94px;
   height: 32px;
   display: flex;
@@ -297,12 +306,34 @@ a {
   background: var(--theme-track);
   color: var(--theme-icon-inactive);
   cursor: pointer;
+  transition: background-color var(--motion-fast) var(--motion-ease);
+}
+
+.theme-toggle-indicator {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  z-index: 0;
+  width: 46px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--theme-knob);
+  transform: translate3d(46px, 0, 0);
+  transition:
+    transform var(--motion-moderate) var(--motion-slide-ease),
+    background-color var(--motion-fast) var(--motion-ease);
+  will-change: transform;
+}
+
+:root[data-theme="light"] .theme-toggle-indicator {
+  transform: translate3d(0, 0, 0);
 }
 
 .theme-toggle-option {
   width: 46px;
   height: 30px;
   position: relative;
+  z-index: 1;
   display: flex;
   flex: 0 0 46px;
   align-items: center;
@@ -319,6 +350,9 @@ a {
   display: block;
   object-fit: contain;
   filter: brightness(0) saturate(100%) invert(48%);
+  transition:
+    opacity var(--motion-fast) var(--motion-ease),
+    filter var(--motion-fast) var(--motion-ease);
 }
 
 .theme-icon-filled {
@@ -334,12 +368,6 @@ a {
 :root[data-theme="light"] .theme-toggle-light .theme-icon-filled {
   opacity: 1;
   filter: brightness(0) saturate(100%) invert(4%);
-}
-
-:root[data-theme="dark"] .theme-toggle-dark,
-:root[data-theme="light"] .theme-toggle-light {
-  background: var(--theme-knob);
-  color: var(--theme-icon-active);
 }
 
 .theme-toggle:focus-visible {
@@ -382,6 +410,7 @@ a {
   border-radius: 48px;
   overflow: hidden;
   background: var(--card);
+  transition: background-color var(--motion-fast) var(--motion-ease);
 }
 
 .case-copy {
@@ -468,7 +497,7 @@ a {
   display: block;
   object-fit: cover;
   transform: scale(1);
-  transition: transform 300ms ease-out;
+  transition: transform var(--motion-moderate) var(--motion-slide-ease);
   will-change: transform;
 }
 
@@ -484,6 +513,14 @@ a {
   :root[data-theme="dark"] .theme-toggle:hover .theme-toggle-light,
   :root[data-theme="light"] .theme-toggle:hover .theme-toggle-dark {
     color: var(--text);
+  }
+
+  :root[data-theme="dark"] .theme-toggle:hover .theme-toggle-light .theme-icon-outline {
+    filter: brightness(0) saturate(100%) invert(93%);
+  }
+
+  :root[data-theme="light"] .theme-toggle:hover .theme-toggle-dark .theme-icon-outline {
+    filter: brightness(0) saturate(100%) invert(4%);
   }
 
   .case-card:hover {
